@@ -1,10 +1,11 @@
 import './App.css';
-import { SeachComp } from './Components';
+import { SeachComp, Results } from './Components';
 
 function App() {
   return (
     <div className="App">
       <SeachComp/>
+      <Results/>
     </div>
   );
 }
