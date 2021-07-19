@@ -1,26 +1,27 @@
 import React,{useState, useEffect} from 'react'
 import './style.css'
+import Results from '../results';
 
-const SearchComp = () => {
+const SearchComp = (props) => {
     const [size, setSize] = useState()
-    const [loginvalue, setLoginValue] = useState()
+    const [loginvalue, setLoginValue] = useState([])
+    const [newdata, setNewData] = useState([])
 
     const loadAsyncData = async () => {      
         try {
           const response = await fetch(`https://api.github.com/search/users?q=${loginvalue} in:login`)
           const data = await response.json();
-          console.log('data from SearchComponent', data)
+          setNewData(data.items)
+        
           
         } catch(e) {
         }
         
       }
-    
       const getResult =(e)=>{
         e.preventDefault();
         loadAsyncData();
-        console.log('clicked')
-        console.log(loginvalue)
+        console.log('async data',newdata)
       }
     
     useEffect(() => {
@@ -32,10 +33,11 @@ const SearchComp = () => {
       }
       window.addEventListener('resize', handleResize)
     }, []);
-    
+
+    console.log('size',size)
     return (
         <div className='search'>
-            <form className='searchForm'>
+            <form className='search_Form'>
                 <input 
                 type='text' 
                 className='search_Field' 
@@ -47,9 +49,9 @@ const SearchComp = () => {
                 className='serch_Btn' 
                 value='Seach' 
                 onClick={getResult}
-
                 />
             </form>
+            <Results newdata={newdata}/>
         </div>
     )
 }
