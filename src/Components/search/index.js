@@ -7,6 +7,7 @@ const SearchComp = (props) => {
     const [loginvalue, setLoginValue] = useState([])
     const [newdata, setNewData] = useState([])
 
+
     const loadAsyncData = async () => {      
         try {
           const response = await fetch(`https://api.github.com/search/users?q=${loginvalue} in:login`)
@@ -39,15 +40,16 @@ const SearchComp = (props) => {
         <div className='search'>
             <form className='search_Form'>
                 <input 
+                autoFocus
                 type='text' 
-                className='search_Field' 
+                className='form-control'
                 placeholder='Search'
                 onChange={(e) => setLoginValue(e.target.value)}
                 /><br></br>
                 <input 
                 type='submit' 
-                className='serch_Btn' 
-                value='Seach' 
+                className='search_Btn' 
+                value='Search' 
                 onClick={getResult}
                 />
             </form>

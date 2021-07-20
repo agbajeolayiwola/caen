@@ -1,18 +1,19 @@
 .search{
-    margin-top: 20px;
+    margin-top: 0px;
+    padding-top: 30px;
 }
-.search_Field{
+.form-control{
     padding: 15px;
     border-radius: 20px;
     border: none;
     background-color: #EDF0DA;
     width: 33%;
 }
-.search_Field:focus {
+.form-control:focus {
     outline: none;
     box-shadow: none;
   }
-.serch_Btn{
+.search_Btn{
  background-color: #1B2021;
  padding: 10px;
  border: none;
@@ -22,7 +23,7 @@
  width: 10%;
  cursor: pointer;
 }
-.serch_Btn:focus {
+.search_Btn:focus {
     outline: none;
     box-shadow: none;
   }
