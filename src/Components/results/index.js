@@ -18,7 +18,7 @@ const Results = ({newdata}) => {
     
 
    
-    if(newdata < 0){
+    if(newdata > 0){
         return <h2>Loading</h2>
     }
     
@@ -43,7 +43,7 @@ const Results = ({newdata}) => {
             ))}
         
         </div>
-              <ReactPaginate
+        <ReactPaginate
             previousLabel={'Prev'}
             nextLabel={'next'}
             pageCount={pageCount}
