@@ -5,7 +5,7 @@ import ReactPaginate from 'react-paginate';
 
 const Results = ({newdata}) => {
     let displayUsers
-
+//pagin nate calculations
     const [pageNumber, setPageNumber] = useState(0)
     const usersPerPage = 9
     const pagesVisited = pageNumber * usersPerPage
@@ -14,12 +14,6 @@ const Results = ({newdata}) => {
 
     const changePage= ({selected})=>{
         setPageNumber(selected);
-    }
-    
-
-   
-    if(newdata > 0){
-        return <h2>Loading</h2>
     }
     
     return(
@@ -43,17 +37,21 @@ const Results = ({newdata}) => {
             ))}
         
         </div>
+        {newdata > 0 ?
+        "help":        
         <ReactPaginate
-            previousLabel={'Prev'}
-            nextLabel={'next'}
-            pageCount={pageCount}
-            onPageChange={changePage}
-            containerClassName={'paginationButton'}
-            previousLinkClassName={'previousBtn'}
-            nextLinkClassName={'nextBtn'}
-            disabledClassName={'paginDisabed'}
-            activeClassName={'paginationAct'}
-            />
+        previousLabel={'Prev'}
+        nextLabel={'next'}
+        pageCount={pageCount}
+        onPageChange={changePage}
+        containerClassName={'paginationButton'}
+        previousLinkClassName={'previousBtn'}
+        nextLinkClassName={'nextBtn'}
+        disabledClassName={'paginDisabed'}
+        activeClassName={'paginationAct'}
+        />
+
+        }
     </div>
     )
 }
