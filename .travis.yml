@@ -1,6 +1,6 @@
-language: node_s;
+language: node_js;
 node_js:
-  -node
+  - node
 install:
   -npm ci
 script:
