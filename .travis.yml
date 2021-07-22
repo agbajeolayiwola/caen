@@ -3,7 +3,7 @@ react:
   -^17.0.2
 cache: npm
 install:
-  -npm ci
+  -npm i
 script:
   -npm test
   -npm run build
