@@ -43,6 +43,7 @@ const SearchComp = (props) => {
         <div className='search'>
             <form className='search_Form'>
                 <input 
+                data-testid='inputText'
                 autoFocus
                 type='text' 
                 className='form-control'
@@ -51,6 +52,7 @@ const SearchComp = (props) => {
                 onChange={(e) => setLoginValue(e.target.value)}
                 /><br></br>
                 <input 
+                data-testid='inputBtn'
                 type='submit' 
                 className='search_Btn' 
                 value='Search' 
