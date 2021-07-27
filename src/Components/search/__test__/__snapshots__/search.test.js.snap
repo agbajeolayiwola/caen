@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<div
+  className="search"
+>
+  <form
+    className="search_Form"
+  >
+    <input
+      autoFocus={true}
+      className="form-control"
+      data-testid="inputText"
+      onChange={[Function]}
+      placeholder="Search"
+      type="text"
+    />
+    <br />
+    <input
+      className="search_Btn"
+      data-testid="inputBtn"
+      onClick={[Function]}
+      type="submit"
+      value="Search"
+    />
+  </form>
+  <div>
+    <div>
+      <div
+        className="result_header_div"
+      >
+        <ul
+          className="result_Header_ul"
+        >
+          <li>
+            Avatar
+          </li>
+          <li>
+            Name
+          </li>
+          <li>
+            Status
+          </li>
+        </ul>
+      </div>
+    </div>
+    <ul
+      className="paginationButton"
+    >
+      <li
+        className="previous paginDisabed"
+      >
+        <a
+          aria-disabled="true"
+          aria-label="Previous page"
+          className="previousBtn"
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          rel="prev"
+          role="button"
+          tabIndex="0"
+        >
+          Prev
+        </a>
+      </li>
+      <li
+        className="next"
+      >
+        <a
+          aria-disabled="false"
+          aria-label="Next page"
+          className="nextBtn"
+          onClick={[Function]}
+          onKeyPress={[Function]}
+          rel="next"
+          role="button"
+          tabIndex="0"
+        >
+          next
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
