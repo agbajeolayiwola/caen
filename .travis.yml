@@ -4,8 +4,13 @@ node_js:
   - node
 install:
   - npm ci
+
+before_script:
+  - npm install
+  - npm install coveralls
+
 script:
- - npm run test:coveralls
+ - npm run coveralls
 
 
 
