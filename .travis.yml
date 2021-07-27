@@ -5,7 +5,8 @@ node_js:
 install:
   - npm ci
 script:
- - npm run test
+ - npm run test coveralls
+
 
 
 deploy:
