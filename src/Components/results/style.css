@@ -32,7 +32,11 @@
     margin-left: 15%;
     border-radius: 20px;
     padding: 3px 20px 3px 15px;
-    background-color: #F7F4F3;
+    box-shadow: 0 0 1rem 0 rgb(0 0 0 / 20%);
+    border-radius: 35px;
+    background-color: rgba(255, 255, 255, .15);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
     grid-template-columns: 33% 33% 33%;
 }
 .results_img{
@@ -40,10 +44,16 @@
     border-radius: 25px;
 }
 .loginP{
-    font-size: 20px;
+    font-size: 18px;
+    color: white;
 }
 .typeP{
-    font-size: 20px;   
+    font-size: 18px;   
+    color: white;
+    text-decoration: none;
+}
+.user a{
+    text-decoration: none;
 }
 .result_Header_ul{
     list-style: none;

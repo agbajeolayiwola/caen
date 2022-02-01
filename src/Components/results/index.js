@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import './style.css'
 import ReactPaginate from 'react-paginate';
+import { Link } from "react-router-dom";
 
 
 const Results = ({newdata}) => {
@@ -15,6 +16,7 @@ const Results = ({newdata}) => {
     const changePage= ({selected})=>{
         setPageNumber(selected);
     }
+    console.log(newdata)
     
     return(
         <div>
@@ -29,7 +31,12 @@ const Results = ({newdata}) => {
             </div>
 
             <div className='user'>
-            <p className='typeP'>{newdata.type}</p>
+                <a href={`${newdata.html_url}`}
+                 target="_blank"
+                 rel="noreferrer noopener"> <p className='typeP'>
+                     Visit Github
+                     </p></a>
+            
             </div>
         </div>
             </div>
@@ -38,8 +45,8 @@ const Results = ({newdata}) => {
             ))}
         
         </div>
-        {newdata > 0 ?
-        "help":        
+        {newdata >= 0 ?
+        null:        
         <ReactPaginate
         previousLabel={'Prev'}
         nextLabel={'next'}

@@ -1,6 +1,13 @@
 import React,{useState, useEffect} from 'react'
 import './style.css'
 import Results from '../results';
+import { motion } from "framer-motion"
+
+
+
+const variants = {
+  open: {paddingTop: '20px'},
+}
 
 const SearchComp = (props) => {
   //screan size
@@ -9,6 +16,8 @@ const SearchComp = (props) => {
     const [loginvalue, setLoginValue] = useState([])
     //set data recieved from api call
     const [newdata, setNewData] = useState([])
+
+    const [isOpen, setIsOpen] = useState(false)
 
 //api fuction
     const loadAsyncData = async () => {      
@@ -25,6 +34,8 @@ const SearchComp = (props) => {
       const getResult =(e)=>{
         e.preventDefault();
         loadAsyncData();
+        
+       setIsOpen(isOpen => !isOpen)
         //console.log('async data',newdata)
       }
     //useEffect for screen size not really needed for the challenge
@@ -39,8 +50,18 @@ const SearchComp = (props) => {
     }, []);
 
     console.log('size',size)
+
+
+
+    
+
     return (
-        <div className='search'>
+      <div>
+        <motion.div 
+        className='search'
+        animate={isOpen ? "open" : "closed"}
+      variants={variants}
+      >
             <form className='search_Form'>
                 <input 
                 data-testid='inputText'
@@ -62,6 +83,7 @@ const SearchComp = (props) => {
             </form>
     {/*pass in new data props to result componenet*/}
             <Results newdata={newdata}/>
+        </motion.div>
         </div>
     )
 }
