@@ -19,20 +19,21 @@ const Results = ({newdata}) => {
     return(
         <div>
         <div>
-            <div className='result_header_div'>
-                <ul className='result_Header_ul'>
-                    <li>Avatar</li>
-                    <li>Name</li>
-                    <li>Status</li>
-                </ul>
-            </div>
         {
             displayUsers = newdata.slice(pageNumber, pagesVisited+usersPerPage).map(newdata=>(
-            <ul key={newdata.id} className='results_list'>
-            <li><img className='results_img' src={newdata.avatar_url} alt='notion.so'/></li>
-            <li><p className='loginP' key={newdata.id}>{newdata.login}</p></li>
-            <li><p className='typeP'>{newdata.type}</p></li>
-            </ul>
+            <div key={newdata.id} className='results_list'>
+        <div className='resultOverall'>
+            <div className='img-name'>
+            <img className='results_img' src={newdata.avatar_url} alt='notion.so'/>
+            <p className='loginP' key={newdata.id}>{newdata.login}</p>
+            </div>
+
+            <div className='user'>
+            <p className='typeP'>{newdata.type}</p>
+            </div>
+        </div>
+            </div>
+
                         
             ))}
         

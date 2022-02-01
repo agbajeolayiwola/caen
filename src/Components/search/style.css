@@ -4,7 +4,7 @@
 }
 .form-control{
     padding: 15px;
-    border-radius: 20px;
+    border-radius: 10px;
     border: none;
     background-color: #EDF0DA;
     width: 33%;
@@ -14,7 +14,7 @@
     box-shadow: none;
   }
 .search_Btn{
- background-color: #1B2021;
+ background-color: #839ea3;
  padding: 10px;
  border: none;
  border-radius: 10px;
